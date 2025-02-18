@@ -1,5 +1,4 @@
 import * as fs from 'fs';
-import axios from 'axios';
 
 /**
  * A utility class for converting files, URLs, buffers, and streams to base64 and hexadecimal strings,
@@ -124,9 +123,9 @@ export class FileConverter {
    */
   private async convertFromURL(url: string): Promise<string | null> {
     try {
-      const response = await axios.get(url, { responseType: 'arraybuffer' });
-      const buffer = Buffer.from(response.data, 'binary');
-      return buffer.toString('base64');
+      const response = await fetch(url);
+      const buffer = await response.arrayBuffer();
+      return Buffer.from(buffer).toString('base64');
     } catch (error) {
       console.error('Error fetching URL:', error);
       return null;
