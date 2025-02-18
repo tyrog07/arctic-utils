@@ -12,8 +12,7 @@ esbuild
     entryPoints: ['src/index.ts'], // Entry point for your application
     bundle: true, // Bundle all dependencies
     minify: true, // Minify the output files
-    splitting: true, // Enable code splitting
-    format: 'esm', // Output format (ESM)
+    format: 'cjs', // Output format (CommonJS)
     outdir: 'dist', // Output directory
     sourcemap: true, // Generate sourcemaps
     metafile: true, // Generate metafile for analysis
