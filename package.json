@@ -1,5 +1,5 @@
 {
-  "name": "@arctic/utils",
+  "name": "@arctics/utils",
   "description": "A JavaScript/TypeScript package providing utilities around certain functionalities",
   "version": "0.0.1-dev",
   "main": "dist/index.js",
@@ -31,7 +31,7 @@
     "lint": "eslint . --ext .ts",
     "prettify": "prettier --write .",
     "test": "jest",
-    "prepare": "husky"
+    "prepare": "husky init"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
