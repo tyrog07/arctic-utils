@@ -17,6 +17,7 @@ esbuild
     outdir: 'dist', // Output directory
     sourcemap: true, // Generate sourcemaps
     metafile: true, // Generate metafile for analysis
+    platform: 'node',
   })
   .then(() => {
     // Optionally compress files with Brotli
