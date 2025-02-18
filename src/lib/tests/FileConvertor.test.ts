@@ -1,8 +1,7 @@
 import { FileConverter } from './../FileConvertor';
 import * as fs from 'fs';
-import axios from 'axios';
 
-jest.mock('axios'); // Mock axios for URL testing
+global.fetch = jest.fn(); // Mock fetch for URL testing
 
 describe('FileConverter', () => {
   let converter: FileConverter;
@@ -22,8 +21,10 @@ describe('FileConverter', () => {
 
     it('should convert a URL to base64', async () => {
       const url = 'https://example.com/image.jpg';
-      const mockResponse = { data: Buffer.from('Image data', 'binary') };
-      (axios.get as jest.Mock).mockResolvedValue(mockResponse);
+      const mockResponse = new Response(Buffer.from('Image data', 'binary'), {
+        status: 200,
+      });
+      (global.fetch as jest.Mock).mockResolvedValue(mockResponse);
 
       const base64 = await converter.fileToBase64(url);
       expect(base64).toBe('SW1hZ2UgZGF0YQ=='); // Expected base64 of "Image data"
@@ -70,7 +71,7 @@ describe('FileConverter', () => {
 
     it('should handle URL fetching errors', async () => {
       const url = 'https://example.com/error';
-      (axios.get as jest.Mock).mockRejectedValue(new Error('Network Error'));
+      (global.fetch as jest.Mock).mockRejectedValue(new Error('Network Error'));
       const base64 = await converter.fileToBase64(url);
       expect(base64).toBeNull();
     });
