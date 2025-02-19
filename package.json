@@ -38,5 +38,23 @@
       "eslint --fix",
       "prettier --write"
     ]
-  }
+  },
+  "keywords": [
+    "utilities",
+    "javascript",
+    "typescript",
+    "file-conversion",
+    "base64",
+    "hexadecimal",
+    "file",
+    "blob",
+    "buffer",
+    "readable-stream",
+    "url",
+    "conversion",
+    "encoding",
+    "decoding",
+    "file-utils",
+    "arctics"
+  ]
 }
