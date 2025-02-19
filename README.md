@@ -17,15 +17,21 @@
 ## Table of Contents
 
 1. [Introduction](#introduction)
-2. [Installation](#installation)
-3. [Usage](#usage)
-4. [API](#api)
-5. [Contributing](#contributing)
-6. [License](#license)
+2. [Features](#features)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [API](#api)
+6. [Contributing](#contributing)
+7. [License](#license)
 
 ## Introduction
 
 A JavaScript/TypeScript package providing utilities around certain functionalities.
+
+## Features
+
+- **FileConvertor**: Convert files to and from base64 and hexadecimal formats.
+- **Localization**: Handle locale-specific formatting for numbers, currencies, and dates.
 
 ## Installation
 
@@ -75,6 +81,27 @@ fileConverter.fileToHex('path/to/file.txt').then((hexString) => {
 fileConverter.hexToFile('hexString', 'path/to/output.txt').then(() => {
   console.log('File written successfully');
 });
+```
+
+### Localization
+
+```typescript
+import { Localization } from '@arctics/utils';
+
+// Set the locale to French (France)
+Localization.setLocale('fr-FR');
+
+// Get the current locale
+console.log(Localization.getLocale()); // Output: 'fr-FR'
+
+// Format a number according to the current locale
+console.log(Localization.formatNumber(1234567.89)); // Output: '1 234 567,89'
+
+// Format a number as currency according to the current locale
+console.log(Localization.formatCurrency(1234567.89, 'EUR')); // Output: '1 234 567,89 €'
+
+// Format a date according to the current locale
+console.log(Localization.formatDate(new Date())); // Output: '19 févr. 2025'
 ```
 
 ## API
@@ -149,6 +176,45 @@ fileConverter.hexToFile('hexString', 'path/to/output.txt').then(() => {
 
   - `stream`: The ReadableStream.
   - Returns: A Promise that resolves to the base64 string, or null if an error occurs.
+
+### Localization
+
+#### Methods
+
+- **setLocale(localeCode: string): void**
+
+  Sets the current locale to the provided locale code.
+
+  - localeCode: The locale code to set.
+
+- **getLocale(): string**
+
+  Returns the current locale code.
+
+  - Returns: The current locale code.
+
+- **formatNumber(number: number): string**
+
+  Formats a number according to the current locale.
+
+  - number: The number to format.
+  - Returns: The formatted number.
+
+- **formatCurrency(number: number, currencyCode: string = 'USD'): string**
+
+  Formats a number as currency according to the current locale.
+
+  - number: The number to format.
+  - currencyCode: The currency code to use for formatting. Defaults to 'USD' if not provided.
+  - Returns: The formatted currency.
+
+- **formatDate(date: Date | string, options?: Intl.DateTimeFormatOptions): string**
+
+  Formats a date according to the current locale.
+
+  - date: The date to format, either as a Date object or a string.
+  - options: Options for date formatting as per Intl.DateTimeFormatOptions.
+  - Returns: The formatted date.
 
 ## Contributing
 
