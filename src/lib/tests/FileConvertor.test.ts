@@ -1,4 +1,4 @@
-import { FileConverter } from '../index';
+import { FileConverter } from '../FileConvertor';
 
 global.fetch = jest.fn(); // Mock fetch for URL testing
 
