@@ -1,22 +1,22 @@
-const esbuild = require('esbuild');
-const { readFileSync, writeFileSync } = require('fs');
-const { brotliCompressSync } = require('zlib');
-const { execSync } = require('child_process');
+import esbuild from 'esbuild';
+import { readFileSync, writeFileSync } from 'fs';
+import { brotliCompressSync } from 'zlib';
+import { execSync } from 'child_process';
 
 // Generate Type Definitions using TypeScript compiler
 execSync('tsc --declaration --emitDeclarationOnly --outDir dist/types');
 
-// Build configuration
+// Build configuration for ESM
 esbuild
   .build({
     entryPoints: ['src/index.ts'], // Entry point for your application
     bundle: true, // Bundle all dependencies
     minify: true, // Minify the output files
-    format: 'cjs', // Output format (CommonJS)
-    outdir: 'dist', // Output directory
+    splitting: true, // Enable code splitting
+    format: 'esm', // Output format (ESM)
+    outdir: 'dist', // Output directory for ESM
     sourcemap: true, // Generate sourcemaps
     metafile: true, // Generate metafile for analysis
-    platform: 'node',
   })
   .then(() => {
     // Optionally compress files with Brotli
