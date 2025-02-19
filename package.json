@@ -1,7 +1,7 @@
 {
   "name": "@arctics/utils",
   "description": "A JavaScript/TypeScript package providing utilities around certain functionalities",
-  "version": "0.1.4-dev",
+  "version": "0.2.0-dev",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -56,6 +56,13 @@
     "encoding",
     "decoding",
     "file-utils",
-    "arctics"
+    "arctics",
+    "localization",
+    "locale",
+    "number-formatting",
+    "currency-formatting",
+    "date-formatting",
+    "intl",
+    "internationalization"
   ]
 }
