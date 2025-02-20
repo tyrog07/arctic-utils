@@ -21,8 +21,9 @@
 3. [Installation](#installation)
 4. [Usage](#usage)
 5. [API](#api)
-6. [Contributing](#contributing)
-7. [License](#license)
+6. [Locales List](#locales-list)
+7. [Contributing](#contributing)
+8. [License](#license)
 
 ## Introduction
 
@@ -215,6 +216,10 @@ console.log(Localization.formatDate(new Date())); // Output: '19 févr. 2025'
   - date: The date to format, either as a Date object or a string.
   - options: Options for date formatting as per Intl.DateTimeFormatOptions.
   - Returns: The formatted date.
+
+## Locales List
+
+For a detailed list of supported locales, please refer to the [Locales List](SUPPORTED_LOCALES.md) file.
 
 ## Contributing
 
