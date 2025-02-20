@@ -15,7 +15,15 @@ export class Localization {
    * @param {string} localeCode - The locale code to set.
    */
   public static setLocale(localeCode: string): void {
-    Localization.currentLocale = localeCode;
+    try {
+      if (Intl.NumberFormat.supportedLocalesOf([localeCode]).length > 0) {
+        Localization.currentLocale = localeCode;
+      } else {
+        throw new Error(`Locale '${localeCode}' is not supported.`);
+      }
+    } catch (e: any) {
+      throw new Error(`An error occurred: ${e.message}`);
+    }
   }
 
   /**

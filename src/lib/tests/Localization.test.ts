@@ -11,6 +11,17 @@ describe('Localization', () => {
       Localization.setLocale('FR');
       expect(Localization.getLocale()).toBe('FR');
     });
+
+    it('should throw an error for unsupported locale', () => {
+      expect(() => Localization.setLocale('invalid-locale')).toThrow(
+        "An error occurred: Locale 'invalid-locale' is not supported.",
+      );
+    });
+
+    it('should set locale to a valid locale code', () => {
+      Localization.setLocale('es-ES');
+      expect(Localization.getLocale()).toBe('es-ES');
+    });
   });
 
   describe('formatNumber', () => {

@@ -1,7 +1,7 @@
 {
   "name": "@arctics/utils",
   "description": "A JavaScript/TypeScript package providing utilities around certain functionalities",
-  "version": "0.2.0-dev",
+  "version": "0.2.1-dev",
   "homepage": "https://github.com/tyrog07/arctics-utils",
   "repository": "tyrog07/arctics-utils",
   "type": "module",
