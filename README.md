@@ -8,8 +8,8 @@
 [![Checks](https://github.com/tyrog07/arctics-utils/actions/workflows/test.yml/badge.svg)](https://github.com/tyrog07/arctics-utils/actions/workflows/test.yml)
 [![Build](https://github.com/tyrog07/arctics-utils/actions/workflows/build.yml/badge.svg)](https://github.com/tyrog07/arctics-utils/actions/workflows/build.yml)
 [![CI](https://github.com/tyrog07/arctics-utils/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/tyrog07/arctics-utils/actions/workflows/CI.yml)
-[![install size](https://img.shields.io/badge/dynamic/json?url=https://packagephobia.com/v2/api.json?p=@arctics/utils&query=$.install.pretty&label=install%20size&style=flat-square)](https://packagephobia.now.sh/result?p=@arctics/utils)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@arctics/utils?style=flat-square)](https://bundlephobia.com/package/@arctics/utils@latest)
+[![install size](https://img.shields.io/badge/dynamic/json?url=https://packagephobia.com/v2/api.json?p=@arctics/utils&query=$.install.pretty&label=install%20size)](https://packagephobia.now.sh/result?p=@arctics/utils)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@arctics/utils)](https://bundlephobia.com/package/@arctics/utils@latest)
 [![Known Vulnerabilities](https://snyk.io/test/npm/@arctics/utils/badge.svg)](https://snyk.io/test/npm/@arctics/utils)
 
 </div>
