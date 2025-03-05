@@ -8,8 +8,8 @@
 [![Checks](https://github.com/tyrog07/arctics-utils/actions/workflows/test.yml/badge.svg)](https://github.com/tyrog07/arctics-utils/actions/workflows/test.yml)
 [![Build](https://github.com/tyrog07/arctics-utils/actions/workflows/build.yml/badge.svg)](https://github.com/tyrog07/arctics-utils/actions/workflows/build.yml)
 [![CI](https://github.com/tyrog07/arctics-utils/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/tyrog07/arctics-utils/actions/workflows/CI.yml)
-[![install size](https://img.shields.io/badge/dynamic/json?url=https://packagephobia.com/v2/api.json?p=@arctics/utils&query=$.install.pretty&label=install%20size&style=flat-square)](https://packagephobia.now.sh/result?p=@arctics/utils)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@arctics/utils?style=flat-square)](https://bundlephobia.com/package/@arctics/utils@latest)
+[![install size](https://img.shields.io/badge/dynamic/json?url=https://packagephobia.com/v2/api.json?p=@arctics/utils&query=$.install.pretty&label=install%20size)](https://packagephobia.now.sh/result?p=@arctics/utils)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/@arctics/utils)](https://bundlephobia.com/package/@arctics/utils@latest)
 [![Known Vulnerabilities](https://snyk.io/test/npm/@arctics/utils/badge.svg)](https://snyk.io/test/npm/@arctics/utils)
 
 </div>
@@ -103,6 +103,9 @@ console.log(Localization.formatCurrency(1234567.89, 'EUR')); // Output: '1 234 5
 
 // Format a date according to the current locale
 console.log(Localization.formatDate(new Date())); // Output: '19 févr. 2025'
+
+// Format a phone number according to the current locale
+console.log(Localization.formatPhoneNumber('+33612345678')); // Output: '06 12 34 56 78' (example for France)
 ```
 
 ## API
@@ -216,6 +219,13 @@ console.log(Localization.formatDate(new Date())); // Output: '19 févr. 2025'
   - date: The date to format, either as a Date object or a string.
   - options: Options for date formatting as per Intl.DateTimeFormatOptions.
   - Returns: The formatted date.
+
+- **formatPhoneNumber(phoneNumber: string): string**
+
+  Formats a phone number according to the specified region or the current locale.
+
+  - phoneNumber: The phone number to format.
+  - Returns: The formatted phone number, or the original number if formatting fails.
 
 ## Locales List
 
