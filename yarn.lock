@@ -10,6 +10,11 @@
     "@jridgewell/gen-mapping" "^0.3.5"
     "@jridgewell/trace-mapping" "^0.3.24"
 
+"@arctics/google-phonelib@^0.1.5-dev":
+  version "0.1.5-dev"
+  resolved "https://registry.yarnpkg.com/@arctics/google-phonelib/-/google-phonelib-0.1.5-dev.tgz#bc8cc84c30902626773c771d0dc42b8b8839c7fc"
+  integrity sha512-LsroMxqoxVnSq5f33mLDvTknTC/EokhC/dv6jhY7ryG1/wfjlHiBn9q/jggMKQY/lOzNm0izmBgrZ2jg2qgabA==
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.26.2":
   version "7.26.2"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.26.2.tgz#4b5fab97d33338eff916235055f0ebc21e573a85"
