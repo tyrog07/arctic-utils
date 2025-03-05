@@ -1,6 +1,11 @@
 /**
  * The Localization class provides methods to handle locale-specific formatting for numbers and dates.
  */
+
+import {
+  PhoneNumberFormat,
+  PhoneNumberHandler,
+} from '@arctics/google-phonelib';
 export class Localization {
   /**
    * The current locale code.
@@ -99,6 +104,32 @@ export class Localization {
     } catch (error) {
       console.error('Error formatting date:', error);
       return dateObj.toLocaleDateString(); // Fallback
+    }
+  }
+
+  /**
+   * Formats a phone number according to the specified region or the current locale.
+   * @param {string} phoneNumber - The phone number to format.
+   * @returns {string} The formatted phone number, or the original number if formatting fails.
+   */
+  public static formatPhoneNumber(phoneNumber: string): string {
+    try {
+      const locale = Localization.currentLocale;
+      const defaultRegion = locale.split('-')[1].toUpperCase(); // Extract region from locale
+
+      const parsedNumber = new PhoneNumberHandler(phoneNumber, defaultRegion);
+      const info = parsedNumber.getPhoneNumberInfo();
+      if (info.valid) {
+        return parsedNumber.format(PhoneNumberFormat.NATIONAL);
+      } else {
+        console.warn(
+          `Invalid phone number: ${phoneNumber} for region: ${defaultRegion}`,
+        );
+        return phoneNumber; // Return original number if invalid
+      }
+    } catch (error) {
+      console.error('Error formatting phone number:', error);
+      return phoneNumber; // Fallback to original number
     }
   }
 
