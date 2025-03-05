@@ -109,4 +109,73 @@ describe('Localization', () => {
       expect(Localization.formatDate(date)).toBe('19 Feb 2025');
     });
   });
+
+  describe('formatPhoneNumber', () => {
+    it('should format a valid US phone number', () => {
+      Localization.setLocale('en-US');
+      const formatted = Localization.formatPhoneNumber('2125551212');
+      expect(formatted).toBe('(212) 555-1212');
+    });
+
+    it('should format a valid UK phone number', () => {
+      Localization.setLocale('en-GB');
+      const formatted = Localization.formatPhoneNumber('02071838750');
+      expect(formatted).toBe('020 7183 8750');
+    });
+
+    it('should format a valid German phone number', () => {
+      Localization.setLocale('de-DE');
+      const formatted = Localization.formatPhoneNumber('03012345678');
+      expect(formatted).toBe('030 12345678');
+    });
+
+    it('should return the original number for an invalid US phone number', () => {
+      Localization.setLocale('en-US');
+      const invalidNumber = '123';
+      const formatted = Localization.formatPhoneNumber(invalidNumber);
+      expect(formatted).toBe(invalidNumber);
+    });
+
+    it('should return the original number for an invalid UK phone number', () => {
+      Localization.setLocale('en-GB');
+      const invalidNumber = '123';
+      const formatted = Localization.formatPhoneNumber(invalidNumber);
+      expect(formatted).toBe(invalidNumber);
+    });
+
+    it('should return the original number for an invalid German phone number', () => {
+      Localization.setLocale('de-DE');
+      const invalidNumber = '123';
+      const formatted = Localization.formatPhoneNumber(invalidNumber);
+      expect(formatted).toBe(invalidNumber);
+    });
+
+    it('should handle edge cases with unusual but valid numbers', () => {
+      Localization.setLocale('en-US');
+      const formatted = Localization.formatPhoneNumber('1800FLOWERS');
+      expect(formatted).toBe('(800) 356-9377');
+    });
+
+    it('should handle edge cases with unusual but valid numbers in other regions', () => {
+      Localization.setLocale('en-GB');
+      const formatted = Localization.formatPhoneNumber('0800 1111');
+      expect(formatted).toBe('0800 1111');
+    });
+
+    it('should log a warning for invalid phone numbers', () => {
+      const consoleWarnSpy = jest
+        .spyOn(console, 'warn')
+        .mockImplementation(() => {});
+      Localization.setLocale('en-US');
+      Localization.formatPhoneNumber('123');
+      expect(consoleWarnSpy).toHaveBeenCalled();
+      consoleWarnSpy.mockRestore();
+    });
+
+    it('should use the locale to determine the region', () => {
+      Localization.setLocale('fr-FR');
+      const formatted = Localization.formatPhoneNumber('01 23 45 67 89');
+      expect(formatted).toBe('01 23 45 67 89');
+    });
+  });
 });
