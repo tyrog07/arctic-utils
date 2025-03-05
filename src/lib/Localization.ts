@@ -6,6 +6,7 @@ import {
   PhoneNumberFormat,
   PhoneNumberHandler,
 } from '@arctics/google-phonelib';
+
 export class Localization {
   /**
    * The current locale code.
