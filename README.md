@@ -103,6 +103,9 @@ console.log(Localization.formatCurrency(1234567.89, 'EUR')); // Output: '1 234 5
 
 // Format a date according to the current locale
 console.log(Localization.formatDate(new Date())); // Output: '19 févr. 2025'
+
+// Format a phone number according to the current locale
+console.log(Localization.formatPhoneNumber('+33612345678')); // Output: '06 12 34 56 78' (example for France)
 ```
 
 ## API
@@ -216,6 +219,13 @@ console.log(Localization.formatDate(new Date())); // Output: '19 févr. 2025'
   - date: The date to format, either as a Date object or a string.
   - options: Options for date formatting as per Intl.DateTimeFormatOptions.
   - Returns: The formatted date.
+
+- **formatPhoneNumber(phoneNumber: string): string**
+
+  Formats a phone number according to the specified region or the current locale.
+
+  - phoneNumber: The phone number to format.
+  - Returns: The formatted phone number, or the original number if formatting fails.
 
 ## Locales List
 

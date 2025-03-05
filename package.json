@@ -1,7 +1,7 @@
 {
   "name": "@arctics/utils",
   "description": "A JavaScript/TypeScript package providing utilities around certain functionalities",
-  "version": "0.2.1-dev",
+  "version": "0.2.3-dev",
   "homepage": "https://github.com/tyrog07/arctics-utils",
   "repository": "tyrog07/arctics-utils",
   "type": "module",
@@ -12,6 +12,9 @@
   "files": [
     "dist"
   ],
+  "dependencies": {
+    "@arctics/google-phonelib": "^0.1.5-dev"
+  },
   "devDependencies": {
     "@types/jest": "^29.5.14",
     "@typescript-eslint/eslint-plugin": "^8.19.1",
@@ -34,7 +37,7 @@
     "lint": "eslint . --ext .ts",
     "prettify": "prettier --write .",
     "test": "jest",
-    "prepare": "husky init"
+    "prepare": "husky"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
