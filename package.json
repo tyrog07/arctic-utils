@@ -1,7 +1,7 @@
 {
   "name": "@arctics/utils",
   "description": "A JavaScript/TypeScript package providing utilities around certain functionalities",
-  "version": "0.2.2-dev",
+  "version": "0.2.3-dev",
   "homepage": "https://github.com/tyrog07/arctics-utils",
   "repository": "tyrog07/arctics-utils",
   "type": "module",
@@ -13,7 +13,7 @@
     "dist"
   ],
   "dependencies": {
-    "@arctics/google-phonelib": "^0.1.5-dev"
+    "@arctics/google-phonelib": "^0.1.6-dev"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
