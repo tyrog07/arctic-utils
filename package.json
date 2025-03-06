@@ -5,8 +5,8 @@
   "homepage": "https://github.com/tyrog07/arctics-utils",
   "repository": "tyrog07/arctics-utils",
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
   "license": "MIT",
   "files": [
